@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+#change profile to 'prod' if you want to use mysql database (don't forget to start related container using docker-compose up -d)
+spring:
+#  profiles:
+#    active: dev
+  datasource:
+    url: jdbc:h2:mem:bookAppDb;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS bookAppDb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+    name: bookAppDb
+  jpa:
+    defer-datasource-initialization: true
+    generate-ddl: true
+    hibernate:
+      format_sql: true
+      show-sql: true
+      default_schema: bookAppDb
+logging:
+  file: app.log
+  level:
+    com:
+      example: ERROR
+      org:
+        springframework: ERROR
