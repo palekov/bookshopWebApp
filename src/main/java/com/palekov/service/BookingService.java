@@ -6,6 +6,7 @@ import com.palekov.repository.BookingRepository;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -25,8 +26,8 @@ public class BookingService {
         return mapper.toListOfBookingDto(bookingRepository.findAll());
     }
 
+    @Transactional
     public BookingDto createBooking(BookingDto bookingDto) {
-        bookingRepository.save(mapper.toBookingEntity(bookingDto));
-        return bookingDto;
+        return mapper.toBookingDto(bookingRepository.save(mapper.toBookingEntity(bookingDto)));
     }
 }

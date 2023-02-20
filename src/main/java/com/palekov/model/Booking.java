@@ -35,7 +35,7 @@ public class Booking {
 //    @JoinColumn(name = "product_id", nullable = false)
 //    private Product product;
 
-    private Integer product_id;
+    private Long product_id;
     private String delivery_address;
     private Date delivery_date;
     private Time delivery_time;

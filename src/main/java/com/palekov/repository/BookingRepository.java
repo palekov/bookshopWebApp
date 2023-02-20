@@ -13,5 +13,5 @@ public interface BookingRepository extends CrudRepository<Booking, Long> {
 
     List<Booking> findAll();
 
-//    Booking save(Booking);
+    Booking save(Booking bookingEntity);
 }

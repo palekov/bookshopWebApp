@@ -25,9 +25,9 @@ public class Product {
     private String name;
     @Column(unique = true, nullable = false)
     private String description;
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String author;
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private Float price;
     @Column(unique = true, nullable = false)
     private String image_path;
