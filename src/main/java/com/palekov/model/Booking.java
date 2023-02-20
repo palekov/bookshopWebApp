@@ -31,14 +31,18 @@ public class Booking {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-//    @ManyToOne
-//    @JoinColumn(name = "product_id", nullable = false)
-//    private Product product;
+    @ManyToOne
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
 
-    private Long product_id;
+    @Column
     private String delivery_address;
+    @Column
     private Date delivery_date;
+    @Column
     private Time delivery_time;
+    @Column
+    private Integer quantity;
 
     @ElementCollection(targetClass = BookingStatus.class)
     @JoinTable(name = "booking_status", joinColumns = @JoinColumn(name = "status_id"))
@@ -46,6 +50,4 @@ public class Booking {
     @Enumerated(EnumType.STRING)
     private Set<BookingStatus> status;
 
-    private Integer status_id;
-    private Integer quantity;
 }

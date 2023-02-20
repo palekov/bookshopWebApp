@@ -9,6 +9,10 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface BookingMapper {
+
+    @Mapping(target = "delivery_address", source = "address")
+    @Mapping(target = "delivery_date", source = "date")
+    @Mapping(target = "delivery_time", source = "time")
     Booking toBookingEntity(BookingDto source);
 
     @Mapping(target = "address", source = "delivery_address")

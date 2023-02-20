@@ -21,20 +21,21 @@ public class Product {
     @Column(insertable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(unique = true, nullable = false)
     private String name;
-    @Column(unique = true, nullable = false)
+    @Column
     private String description;
     @Column(nullable = false)
     private String author;
     @Column(nullable = false)
     private Float price;
-    @Column(unique = true, nullable = false)
+    @Column
     private String image_path;
 
     @OneToMany(mappedBy = "product")
     private Set<Store> storeItems;
 
-//    @OneToMany (mappedBy="product")
-//    private Set<Booking> bookings;
+    @OneToMany (mappedBy="product")
+    private Set<Booking> bookings;
 }

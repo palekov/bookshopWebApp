@@ -23,7 +23,10 @@ public class Store {
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+    @Column
     private Integer available_qty;
+    @Column
     private Integer booked_qty;
+    @Column
     private Integer sold_qty;
 }

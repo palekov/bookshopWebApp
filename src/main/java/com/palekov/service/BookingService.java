@@ -2,7 +2,9 @@ package com.palekov.service;
 
 import com.palekov.dto.BookingDto;
 import com.palekov.mapper.BookingMapper;
+import com.palekov.model.Booking;
 import com.palekov.repository.BookingRepository;
+import com.palekov.repository.ProductRepository;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,9 @@ public class BookingService {
 
     @Autowired
     private BookingRepository bookingRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
 
     protected final BookingMapper mapper = Mappers.getMapper(BookingMapper.class);
 
