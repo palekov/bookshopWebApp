@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>products</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="../elements/header.js"></script>
+    <script src="../elements/util_methods.js"></script>
+
+    <script src="products.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<div id="header"></div>
+<div id="validation-block">
+    <div class="w3-container w3-margin">
+        <div id='validation-error' class="w3-panel w3-red w3-display-container" style="display: none">
+        <span onclick="this.parentElement.style.display='none'"
+              class="w3-button w3-large w3-display-topright">&times;</span>
+            <h5>Validation error!</h5>
+            <p id="error-message">.</p>
+            <button id='show-error-details-btn' onclick="expandCollapse('show-error-details', 'Error detailed message')"
+                    class="w3-btn w3-block w3-red w3-left-align">Show Error detailed message
+            </button>
+            <div id="show-error-details" class="w3-container w3-hide"></div>
+        </div>
+    </div>
+</div>
+
+<div class="w3-row">
+    <div class="w3-col m8 l9">
+        <div class="w3-container">
+            <table id="products" class="w3-table-all w3-card-4 w3-hoverable">
+                <tr>
+                    <th>Choose</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Image path</th>
+                </tr>
+            </table>
+        </div>
+        <div class="w3-container">
+            <button class="w3-btn w3-white w3-border w3-round-large" id="delete-story">Delete selected products</button>
+        </div>
+    </div>
+    <div class="w3-col m4 l3">
+
+        <div class="w3-container">
+            <label class="w3-text-teal"><b>Name</b></label>
+            <input id="name-input" class="w3-input w3-border w3-light-grey" type="text">
+
+            <label class="w3-text-teal"><b>Description</b></label>
+            <input id="description-input" class="w3-input w3-border w3-light-grey" type="text">
+
+            <label class="w3-text-teal"><b>Author</b></label>
+            <input id="author-input" class="w3-input w3-border w3-light-grey" type="text">
+
+            <label class="w3-text-teal"><b>Price</b></label>
+            <input id="price-input" class="w3-input w3-border w3-light-grey" type="text">
+
+            <label class="w3-text-teal"><b>Image</b></label>
+            <input id="image-input" class="w3-input w3-border w3-light-grey" type="text">
+
+            <br>
+        </div>
+        <div class="w3-container">
+            <button class="w3-btn w3-white w3-border w3-round-large" id="add-story">Add product</button>
+        </div>
+        <div id='validation-success' class="w3-panel w3-green" style="display: none">
+            <button class="w3-button">Success!</button>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+
+</body>
+</html>
+

@@ -18,6 +18,10 @@ spring:
       format_sql: true
       show-sql: true
       default_schema: bookAppDb
+  security:
+    user:
+      name: user
+      password: password
 logging:
   file: app.log
   level:

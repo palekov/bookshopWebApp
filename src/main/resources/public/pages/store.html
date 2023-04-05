@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stories</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="../elements/header.js"></script>
+    <script src="../elements/util_methods.js"></script>
+
+    <script src="store.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<div id="header"></div>
+<div id="validation-block">
+    <div class="w3-container w3-margin">
+        <div id='validation-error' class="w3-panel w3-red w3-display-container" style="display: none">
+        <span onclick="this.parentElement.style.display='none'"
+              class="w3-button w3-large w3-display-topright">&times;</span>
+            <h5>Validation error!</h5>
+            <p id="error-message">.</p>
+            <button id='show-error-details-btn' onclick="expandCollapse('show-error-details', 'Error detailed message')"
+                    class="w3-btn w3-block w3-red w3-left-align">Show Error detailed message
+            </button>
+            <div id="show-error-details" class="w3-container w3-hide"></div>
+        </div>
+    </div>
+</div>
+
+<div class="w3-row">
+    <div class="w3-col m8 l9">
+        <div class="w3-container">
+            <table id="stores" class="w3-table-all w3-card-4 w3-hoverable">
+                <tr>
+                    <th>Choose</th>
+                    <th>product_id</th>
+                    <th>available_qty</th>
+                    <th>booked_qty</th>
+                    <th>sold_qty</th>
+                </tr>
+            </table>
+        </div>
+        <div class="w3-container">
+            <button class="w3-btn w3-white w3-border w3-round-large" id="delete-store">Delete selected items</button>
+        </div>
+    </div>
+    <div class="w3-col m4 l3">
+
+        <div class="w3-container">
+            <label class="w3-text-teal"><b>Product ID</b></label>
+            <input id="productId-input" class="w3-input w3-border w3-light-grey" type="number" min="1" max="100" value="1">
+
+            <label class="w3-text-teal"><b>Available</b></label>
+            <input id="available-input" class="w3-input w3-border w3-light-grey" type="number" min="1" max="10" value="1">
+
+            <label class="w3-text-teal"><b>Booked</b></label>
+            <input id="booked-input" class="w3-input w3-border w3-light-grey" type="number" min="1" max="10" value="1">
+
+            <label class="w3-text-teal"><b>Sold</b></label>
+            <input id="sold-input" class="w3-input w3-border w3-light-grey" type="number" min="1" max="999999" value="1">
+
+            <br>
+        </div>
+        <div class="w3-container">
+            <button class="w3-btn w3-white w3-border w3-round-large" id="add-store">Add store item</button>
+        </div>
+        <div id='validation-success' class="w3-panel w3-green" style="display: none">
+            <button class="w3-button">Success!</button>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+
+
+</body>
+</html>
